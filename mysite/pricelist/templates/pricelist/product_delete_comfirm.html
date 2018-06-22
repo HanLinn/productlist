@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-
 <body>
-    <form method="POST">
-        {% csrf_token %} {{ form }}
-        <input type="submit" value="Submit"></input>
+    <form method='post'>
+        {% csrf_token %}
+        <h2>Are you sure you want to delete {{ product.name }}?</h2>
+        <button type="submit">Comfirm</button>
     </form>
-
-{% if product %}
-<a href="{% url 'product_delete' product.id %}">Delete</a>
-{% endif %}
 </body>
-
 </html>

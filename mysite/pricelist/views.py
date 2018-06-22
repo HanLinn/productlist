@@ -24,3 +24,18 @@ def product_update(request, id):
         form.save()
         return redirect('index')
     return render(request, 'pricelist/detail.html', {'form':form,'product':product})
+
+def product_create(request):
+    form=detail(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    return render(request,'pricelist/detail.html',{'form':form})
+
+def product_delete(request,id):
+    product=Pricelist.objects.get(id=id)
+
+    if request.method=="POST":
+        product.delete()
+        return redirect('index')
+    return render(request,'pricelist/product_delete_comfirm.html',{'product':product})

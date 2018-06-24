@@ -1,23 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "pricelist/base.html" %}
+{% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Category</title>
-</head>
+    <h1 align="center">Category</h1>
+    <a href="{% url 'product_create' %}" class="btn btn-primary btn-block" role="button" >New Product</a>
 
-<body>
-    <h1>Category</h1>
-    <a href="{% url 'product_create' %}">New Product</a>
-    <ul>
+    <br>
+    <ul class="list-group">
         {% for p in categorys %}
-        <li>
+        <li class="list-group-item" align="center">
             <a href="{% url 'productlist' p.id %}"> {{ p.category_name }} </a>
         </li>
         {% endfor %}
     </ul>
-</body>
 
-</html>
+{% endblock %}

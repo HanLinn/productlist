@@ -25,7 +25,7 @@ SECRET_KEY = 'uag@6s%hb9+4k(*urx2+fzoaxu+p#@$l6ch_dyzj5^1)s_oad7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.1.118"]
+ALLOWED_HOSTS = ["127.0.0.1","192.168.1.118"]
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pricelist',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT=os.path.join(BASE_DIR, 'static')
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'

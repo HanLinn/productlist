@@ -1,7 +1,6 @@
 {% extends "pricelist/base.html" %}
 {% block content %}
 
-<body>
     <div class="container">
         <form method="POST">
             {% csrf_token %}
@@ -17,15 +16,26 @@
                 <label for="category">Category</label>
                 {{ form.category }}
             </div>
+            <div class="form-group"> 
+                <label for="base_currency">Base Currency</label>
+                {{ form.base_currency }}
+            </div>
+            <div class="form-group"> 
+                <label for="tags">Tags</label>
+                {{ form.tags }}
+            </div>
+            <div class="form-group"> 
+                <label for="tags">Unit</label>
+                {{ form.Unit }}
+            </div>
             <div class="btn-group">
-                <input type="submit" value="Submit" class="btn btn-default"></input>
+                <input type="submit" value="Submit" class="btn btn-primary"></input>
                 {% if product %}
-                <a class="btn btn-default" href="{% url 'product_delete' product.id %}">Delete</a>
+                <a class="btn btn-danger" href="{% url 'product_delete' product.id %}">Delete</a>
                 {% endif %}
             </div>
         
         </form>
 
     </div>
-</body>
 {% endblock %}

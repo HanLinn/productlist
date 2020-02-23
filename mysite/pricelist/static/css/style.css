@@ -1,0 +1,23 @@
+
+p{
+    font-family:Pyidaungsu,sans-serif;
+}
+h4{
+    font-size: 10pt;
+}
+body{
+    font-family:Pyidaungsu,sans-serif !important;
+    padding-top: 70px;
+}
+table,tr,h3{
+    font-family:Pyidaungsu,sans-serif !important;
+}
+
+.search{
+    padding-top: 5px;
+}
+
+tbody { 
+    height:80em;  
+    overflow:scroll;
+                }

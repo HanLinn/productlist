@@ -5,14 +5,17 @@ from .forms import detail
 
 
 def index(request):
-    categorys = Category.objects.all()
-    context = {'categorys': categorys}
-    return render(request, 'pricelist/category.html', context)
+    productlist=Pricelist.objects.all()
+    categorylist = Category.objects.all()
+    context = {'productlist': productlist,'categorylist' : categorylist}
+    return render(request, 'pricelist/pricelist.html', context)
 
 
-def productlist(request, category_name_id):
-    productlist = Pricelist.objects.filter(category_id=category_name_id)
-    context = {'productlist': productlist}
+def productlist(request):
+    #productlist = Pricelist.objects.filter(category_id=category_name_id)
+    categorylist = Category.objects.all()
+    productlist=Pricelist.objects.all()
+    context = {'productlist': productlist,'categorylist' : categorylist}
     return render(request, 'pricelist/pricelist.html', context)
 
 

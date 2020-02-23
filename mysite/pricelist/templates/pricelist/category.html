@@ -1,16 +1,16 @@
 {% extends "pricelist/base.html" %}
 {% block content %}
-
+    <div class='container'>
     <h1 align="center">Category</h1>
     <a href="{% url 'product_create' %}" class="btn btn-primary btn-block" role="button" >New Product</a>
 
     <br>
     <ul class="list-group">
-        {% for p in categorys %}
+        {% for category in categorys %}
         <li class="list-group-item" align="center">
-            <a href="{% url 'productlist' p.id %}"> {{ p.category_name }} </a>
+            <a href="{% url 'productlist' category.id %}"> {{ category.category_name }} </a>
         </li>
         {% endfor %}
     </ul>
-
+    </div>
 {% endblock %}
